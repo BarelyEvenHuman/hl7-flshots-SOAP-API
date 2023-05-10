@@ -1,0 +1,1 @@
+OBX|1|CE|64994-7^Vaccine Funding Program Eligibility Category^LN|1|$obx_code^$obx_status^HL70064||||||F|||$vaccine_date|||VXC40^Eligibility captured at the immunization level^CDCPHINVS

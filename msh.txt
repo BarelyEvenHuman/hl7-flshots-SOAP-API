@@ -1,0 +1,1 @@
+MSH|^~\&|^NomiVaccine|$login_id^$org_name|FLSHOTS||$message_time_stamp||VXU^V04^VXU_V04|$message_control_id|P|2.5.1|||NE|NE|||||Z22^CDCPHINVS

@@ -1,0 +1,1 @@
+RXA|0|1|$procedure_date||$cvx_code^$Vaccine^CVX||||00^New Immunization Record^NIP001||^^^$site_id^^^^^$site_description||||$lot_Number|$Vaccine_Expiration|$mfg_code^$vax_manufacturer^MVX^^^|||CP

@@ -1,0 +1,1 @@
+PID|1||$patient_id^^^^MR||$last_name^$first_name^^^^^L||$patient_dob|$patient_gender||$patient_race^HL70005|$patient_address_1^^$patient_city^$state^$zip||^PRN^^^^$phone|||||||||$patient_ethinicity^CDCREC
