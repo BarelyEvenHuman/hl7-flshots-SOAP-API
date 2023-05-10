@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:s0="urn:cdc:iisb:2011" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" targetNamespace="urn:cdc:iisb:2011">
+    <types>
+        <s:schema elementFormDefault="qualified" targetNamespace="urn:cdc:iisb:2011">
+            <s:element name="connectivityTestFL">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element name="echoBack" type="s:string" minOccurs="1" maxOccurs="1" nillable="true"/>
+                        <s:element name="username" type="s:string" minOccurs="1" maxOccurs="1" nillable="true"/>
+                        <s:element name="password" type="s:string" minOccurs="1" maxOccurs="1" nillable="true"/>
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="connectivityTestFLResponse">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element name="return" type="s:string" minOccurs="1" maxOccurs="1" nillable="true"/>
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="submitSingleMessage">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element name="username" type="s:string" minOccurs="1" maxOccurs="1" nillable="true"/>
+                        <s:element name="password" type="s:string" minOccurs="1" maxOccurs="1" nillable="true"/>
+                        <s:element name="facilityID" type="s:string" minOccurs="1" maxOccurs="1" nillable="true"/>
+                        <s:element name="hl7Message" type="s:string" minOccurs="1" maxOccurs="1" nillable="true"/>
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="submitSingleMessageResponse">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element name="return" type="s:string" minOccurs="1" maxOccurs="1" nillable="true"/>
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+        </s:schema>
+    </types>
+    <message name="connectivityTestFL_Message">
+        <part name="parameters" element="s0:connectivityTestFL"/>
+    </message>
+    <message name="connectivityTestFLResponse_Message">
+        <part name="parameters" element="s0:connectivityTestFLResponse"/>
+    </message>
+    <message name="submitSingleMessage_Message">
+        <part name="parameters" element="s0:submitSingleMessage"/>
+    </message>
+    <message name="submitSingleMessageResponse_Message">
+        <part name="parameters" element="s0:submitSingleMessageResponse"/>
+    </message>
+    <portType name="InterOp_ServiceSoap">
+        <operation name="connectivityTestFL">
+            <input message="s0:connectivityTestFL_Message"/>
+            <output message="s0:connectivityTestFLResponse_Message"/>
+        </operation>
+        <operation name="submitSingleMessage">
+            <input message="s0:submitSingleMessage_Message"/>
+            <output message="s0:submitSingleMessageResponse_Message"/>
+        </operation>
+    </portType>
+    <binding name="HL7IISMethods" type="s0:InterOp_ServiceSoap">
+        <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <operation name="connectivityTestFL">
+            <soap12:operation soapAction="urn:cdc:iisb:2011:connectivityTestFL" style="document"/>
+            <input>
+                <soap12:body use="literal"/>
+            </input>
+            <output>
+                <soap12:body use="literal"/>
+            </output>
+        </operation>
+        <operation name="submitSingleMessage">
+            <soap12:operation soapAction="urn:cdc:iisb:2011:submitSingleMessage" style="document"/>
+            <input>
+                <soap12:body use="literal"/>
+            </input>
+            <output>
+                <soap12:body use="literal"/>
+            </output>
+        </operation>
+    </binding>
+    <service name="InterOp_Service">
+        <port name="HL7IISMethods" binding="s0:HL7IISMethods">
+            <soap12:address location="https://www.flshots.com/interop/InterOp.Service.HL7IISMethods.cls" />
+        </port>
+    </service>
+</definitions>
